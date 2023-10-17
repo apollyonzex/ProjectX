@@ -124,9 +124,9 @@ namespace Common
             /// <summary>
             /// 检测：对象枚举中，是否包含元素
             /// </summary>
-            public static bool valid_enum_contain_element<T, V>(V v)
+            public static bool valid_enum_contain_element<ENUM, E>(E e)
             {
-                return Enum.IsDefined(typeof(T), v);
+                return Enum.IsDefined(typeof(ENUM), e);
             }
         }
     }
