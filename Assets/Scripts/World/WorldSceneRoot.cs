@@ -23,7 +23,6 @@ namespace World
         {
             var time_mgr = new Times.TimeMgr(Config.TimeMgr_Name);
             time_mgr.load_view(uiRoot.transform);
-
         }
 
 
