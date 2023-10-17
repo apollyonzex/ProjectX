@@ -1,4 +1,4 @@
-﻿using Common_Formal;
+﻿using Common;
 using Foundation;
 
 namespace #namespace#
