@@ -1,0 +1,38 @@
+fileFormatVersion: 2
+guid: ab68a1247de056c408421fa4f2319187
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 4adb6ab070f5f684c9eadaca6aa3a350, type: 3}
+  items:
+  - sheet_name: body
+    exports:
+    - name: body
+      has_mask: 0
+      mask: 0
+      generate_asset: 1
+      generate_code: 1
+      code_lang: 0
+      code_path: 
+  - sheet_name: cards
+    exports:
+    - name: cards
+      has_mask: 0
+      mask: 0
+      generate_asset: 1
+      generate_code: 1
+      code_lang: 0
+      code_path: 
+  - sheet_name: device
+    exports:
+    - name: device
+      has_mask: 0
+      mask: 0
+      generate_asset: 1
+      generate_code: 1
+      code_lang: 0
+      code_path: 

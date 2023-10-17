@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c5958c764007a148ad477002717de84, type: 3}
+  m_Name: Level_Entrance_Data
+  m_EditorClassIdentifier: 
+  cells:
+  - seq: 0
+    name: Autumn
+    pos: {x: -128, y: -196}
+    size: {x: 100, y: 100}
+    world_id: 100000003
+  - seq: 0
+    name: Cave
+    pos: {x: -19.75444, y: -196.15752}
+    size: {x: 100, y: 100}
+    world_id: 100000000
+  - seq: 0
+    name: Spring
+    pos: {x: -19.150787, y: -94.591736}
+    size: {x: 100, y: 100}
+    world_id: 100000001
+  - seq: 0
+    name: Summer
+    pos: {x: 85.192566, y: -196.6625}
+    size: {x: 100, y: 100}
+    world_id: 100000002
+  - seq: 0
+    name: Winter
+    pos: {x: -21.364044, y: -312.7168}
+    size: {x: 100, y: 100}
+    world_id: 100000004

@@ -1,0 +1,6 @@
+frongt_front_grass_animation_3.png
+size:230,102
+filter:Linear,Linear
+pma:true
+11-rnd-grass-05
+bounds:2,2,226,98

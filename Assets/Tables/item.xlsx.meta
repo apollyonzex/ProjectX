@@ -1,0 +1,29 @@
+fileFormatVersion: 2
+guid: bcf2a099da5474645a2275b4e68ddd99
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 4adb6ab070f5f684c9eadaca6aa3a350, type: 3}
+  items:
+  - sheet_name: item
+    exports:
+    - name: item
+      has_mask: 0
+      mask: 0
+      generate_asset: 1
+      generate_code: 1
+      code_lang: 0
+      code_path: 
+  - sheet_name: caravanbody
+    exports:
+    - name: caravanbody
+      has_mask: 0
+      mask: 0
+      generate_asset: 1
+      generate_code: 1
+      code_lang: 0
+      code_path: 

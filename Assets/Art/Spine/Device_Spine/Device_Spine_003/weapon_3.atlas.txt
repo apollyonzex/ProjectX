@@ -1,0 +1,10 @@
+weapon_3.png
+size:206,103
+filter:Linear,Linear
+pma:true
+ball_1
+bounds:2,2,103,99
+offsets:4,4,111,107
+ball_2
+bounds:107,4,97,97
+offsets:4,4,105,105

@@ -1,0 +1,29 @@
+fileFormatVersion: 2
+guid: e3a6796c35187d64cb4644bdbe5abb8b
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 4adb6ab070f5f684c9eadaca6aa3a350, type: 3}
+  items:
+  - sheet_name: player_exp
+    exports:
+    - name: player_exp
+      has_mask: 0
+      mask: 0
+      generate_asset: 1
+      generate_code: 1
+      code_lang: 0
+      code_path: 
+  - sheet_name: device_exp
+    exports:
+    - name: device_exp
+      has_mask: 0
+      mask: 0
+      generate_asset: 1
+      generate_code: 1
+      code_lang: 0
+      code_path: 

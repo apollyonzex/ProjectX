@@ -1,0 +1,34 @@
+{
+    "name": "Controls1",
+    "maps": [
+        {
+            "name": "System",
+            "id": "7d86edba-8813-4233-a2af-b5ef7a0dca16",
+            "actions": [
+                {
+                    "name": "Config",
+                    "type": "Button",
+                    "id": "eecfd385-d06e-4651-99bb-ec6af479e7e2",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "d0e67abc-8530-4f8d-b987-e5b5f5cd22a3",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "Press",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Config",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

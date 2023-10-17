@@ -1,0 +1,20 @@
+fileFormatVersion: 2
+guid: 68f59b3fb764ae24ab8804d55ae566c3
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 4adb6ab070f5f684c9eadaca6aa3a350, type: 3}
+  items:
+  - sheet_name: site
+    exports:
+    - name: sites
+      has_mask: 0
+      mask: 0
+      generate_asset: 1
+      generate_code: 1
+      code_lang: 0
+      code_path: 

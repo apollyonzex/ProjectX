@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83e2b18f7a2a7d7418e3ce1a52eaeffb, type: 3}
+  m_Name: Formal_Map_001
+  m_EditorClassIdentifier: 
+  sites:
+  - id: 020e2707030e2707040e2707050e2707060e2707
+    index: 0
+    position: {x: -2.97, y: -4.37}
+    next_index: 07000000
+    scene_resource_ids: 
+  - id: 020e2707030e2707040e2707050e2707060e2707
+    index: 1
+    position: {x: -4.99, y: -1.6500001}
+    next_index: 040000000300000005000000
+    scene_resource_ids: 
+  - id: 020e2707030e2707040e2707050e2707060e2707
+    index: 2
+    position: {x: -8.3, y: -0.8200002}
+    next_index: 07000000
+    scene_resource_ids: 
+  - id: 020e2707030e2707040e2707050e2707060e2707
+    index: 3
+    position: {x: -3.64, y: 3.03}
+    next_index: 05000000
+    scene_resource_ids: 
+  - id: 020e2707030e2707040e2707050e2707060e2707
+    index: 4
+    position: {x: 0.8399998, y: -0.36000013}
+    next_index: 05000000
+    scene_resource_ids: 
+  - id: 020e2707030e2707040e2707050e2707060e2707
+    index: 5
+    position: {x: 2.54, y: 4.44}
+    next_index: 06000000
+    scene_resource_ids: 
+  - id: 020e2707030e2707040e2707050e2707060e2707
+    index: 6
+    position: {x: 8.620708, y: -1.5619102}
+    next_index: 
+    scene_resource_ids: 
+  - id: 010e2707
+    index: 7
+    position: {x: -7.95, y: -4.42}
+    next_index: 010000000000000002000000
+    scene_resource_ids: 
+  start_index: 7
+  map_bkg: {fileID: 21300000, guid: e94ff7cacd99aaa48824cbcf3cbd522c, type: 3}

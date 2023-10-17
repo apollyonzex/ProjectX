@@ -1,0 +1,6 @@
+40-cloud-02.png
+size:1254,374
+filter:Linear,Linear
+pma:true
+40-cloud-02
+bounds:2,2,1250,370

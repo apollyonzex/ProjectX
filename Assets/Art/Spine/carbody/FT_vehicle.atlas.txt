@@ -1,0 +1,7 @@
+FT_vehicle.png
+size:177,277
+filter:Linear,Linear
+pma:true
+vehicle_body2
+bounds:2,2,173,273
+offsets:0,1,173,274

@@ -1,0 +1,29 @@
+﻿using Foundation;
+using UnityEngine;
+
+namespace #namespace#
+{
+    public class #name# : MonoBehaviour, #iview#
+    {
+        #mgr# mgr;
+
+        //==================================================================================================
+
+        void IModelView<#mgr#>.attach(#mgr# mgr)
+        {
+            this.mgr = mgr;
+        }
+
+
+        void IModelView<#mgr#>.detach(#mgr# mgr)
+        {
+            this.mgr = null;
+        }
+
+
+        void IModelView<#mgr#>.shift(#mgr# old_mgr, #mgr# new_mgr)
+        {
+        }
+    }
+}
+

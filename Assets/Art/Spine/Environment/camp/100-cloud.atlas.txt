@@ -1,0 +1,13 @@
+100-cloud.png
+size:2152,382
+filter:Linear,Linear
+pma:true
+100-cloud-01
+bounds:2,164,2148,216
+offsets:1,1,2150,218
+100-cloud-02
+bounds:917,14,688,148
+offsets:1,1,690,150
+100-cloud-03
+bounds:2,2,913,160
+offsets:1,1,915,162

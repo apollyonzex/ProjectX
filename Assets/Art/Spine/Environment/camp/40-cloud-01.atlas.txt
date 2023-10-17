@@ -1,0 +1,12 @@
+40-cloud-01.png
+size:2574,1422
+filter:Linear,Linear
+pma:true
+40-cloud-01
+bounds:2,70,2306,1350
+40-cloud-01a
+bounds:2310,2,622,262
+rotate:90
+40-cloud-01b
+bounds:2310,626,794,150
+rotate:90

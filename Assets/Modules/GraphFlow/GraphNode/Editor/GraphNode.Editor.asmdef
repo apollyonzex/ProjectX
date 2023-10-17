@@ -1,0 +1,19 @@
+{
+    "name": "GraphNode.Editor",
+    "references": [
+        "GUID:3166a6b734766834aa242e79f6037781",
+        "GUID:d179fba40f6b84fd49ee7767d1a1102b",
+        "GUID:651fb19683eeab64cb673df53543c2ef"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

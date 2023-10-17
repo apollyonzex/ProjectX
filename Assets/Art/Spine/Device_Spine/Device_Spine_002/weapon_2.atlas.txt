@@ -1,0 +1,11 @@
+weapon_2.png
+size:300,165
+filter:Linear,Linear
+pma:true
+base
+bounds:210,57,88,106
+offsets:1,1,90,108
+body
+bounds:2,2,161,206
+offsets:1,5,163,212
+rotate:90

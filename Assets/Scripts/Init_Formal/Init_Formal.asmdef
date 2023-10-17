@@ -1,0 +1,18 @@
+{
+    "name": "Init_Formal",
+    "rootNamespace": "",
+    "references": [
+        "GUID:e2930fc28f7f95349b0bedd6ba0151e0",
+        "GUID:651fb19683eeab64cb673df53543c2ef",
+        "GUID:a75ee5c86af43114aa8f75f07b513664"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

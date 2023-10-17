@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 14e6e93f470f139419f32e9903a3ba52
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - node_tex: {fileID: 2800000, guid: 3dd7480e3cad0a14a993a9d59d82c8f4, type: 3}
+  - node_selected_tex: {fileID: 2800000, guid: fef91e7ece993e34c87ee30c23d22fa3, type: 3}
+  - node_dot_tex: {fileID: 2800000, guid: 198e778b6b9b9e9488a1b2b5d1611fc3, type: 3}
+  - node_dot_outer_tex: {fileID: 2800000, guid: 8f41b55950cbf8a4ea699428c0ae4f2b,
+      type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

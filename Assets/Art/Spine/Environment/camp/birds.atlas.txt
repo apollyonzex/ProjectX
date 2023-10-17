@@ -1,0 +1,10 @@
+birds.png
+size:54,27
+filter:Linear,Linear
+pma:true
+body
+bounds:28,2,19,12
+wing_l
+bounds:28,16,24,9
+wing_r
+bounds:2,2,24,23

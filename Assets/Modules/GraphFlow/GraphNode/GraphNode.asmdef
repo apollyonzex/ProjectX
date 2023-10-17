@@ -1,0 +1,16 @@
+{
+    "name": "GraphNode",
+    "references": [
+        "GUID:651fb19683eeab64cb673df53543c2ef",
+        "GUID:d179fba40f6b84fd49ee7767d1a1102b"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
