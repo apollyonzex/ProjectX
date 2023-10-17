@@ -1,6 +1,0 @@
-strip_animation.png
-size:26,134
-filter:Linear,Linear
-pma:true
-26-rnd-closetree-03
-bounds:2,2,22,130

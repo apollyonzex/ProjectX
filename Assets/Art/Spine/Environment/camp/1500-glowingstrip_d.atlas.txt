@@ -1,6 +1,0 @@
-1500-glowingstrip_d.png
-size:362,1194
-filter:Linear,Linear
-pma:true
-1500-glowingstrip-04
-bounds:2,2,358,1190

@@ -1,6 +1,0 @@
-transfer-belt.png
-size:1440,292
-filter:Linear,Linear
-pma:true
-images/transfer-belt
-bounds:2,2,1436,288

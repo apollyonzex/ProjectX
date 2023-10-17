@@ -1,7 +1,0 @@
-1200-glowingstrip_a.png
-size:963,1995
-filter:Linear,Linear
-pma:true
-1200-glowingstrip-01
-bounds:2,2,959,1991
-offsets:0,2,968,2000

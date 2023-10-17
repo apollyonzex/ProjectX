@@ -1,9 +1,0 @@
-Bat_2.png
-size:103,51
-filter:Linear,Linear
-pma:true
-Head
-bounds:67,12,37,34
-rotate:90
-Wing-Right
-bounds:2,2,63,47

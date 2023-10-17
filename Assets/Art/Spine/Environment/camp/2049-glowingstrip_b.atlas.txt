@@ -1,7 +1,0 @@
-2049-glowingstrip_b.png
-size:184,541
-filter:Linear,Linear
-pma:true
-2049-glowingstrip-02
-bounds:2,2,180,537
-offsets:0,0,183,537
