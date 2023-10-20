@@ -4,7 +4,7 @@ namespace World
 {
     public class WorldSceneRoot : SceneRoot<WorldSceneRoot>
     {
-        public Rooms.RoomCreator room_creator;
+        public Creator[] creators;
 
         WorldContext ctx;
 
@@ -15,23 +15,18 @@ namespace World
             ctx = WorldContext._init();
             ctx.init();
 
-            init_mgr();
             init_module();
 
             ctx.can_start_tick = true;
         }
 
 
-        void init_mgr()
-        {
-            var time_mgr = new Times.TimeMgr(Config.TimeMgr_Name);
-            time_mgr.load_view(uiRoot.transform);
-        }
-
-
         void init_module()
         {
-            room_creator.@do();
+            foreach (var e in creators)
+            {
+                e.@do();
+            }
         }
 
 

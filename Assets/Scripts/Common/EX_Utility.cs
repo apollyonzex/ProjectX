@@ -49,17 +49,6 @@ namespace Common
 
             return ret / 1000;
         }
-
-
-        /// <summary>
-        /// 快捷创建view
-        /// </summary>
-        public static void quick_add_view<Mgr, IView, View>((string, string) p, Mgr mgr, Transform parent, out View view) where Mgr : class, IModel<Mgr, IView> where View : UnityEngine.Object, IView where IView : class, IModelView<Mgr>
-        {
-            Base_Utility.try_load_asset(p, out view);
-            view = UnityEngine.Object.Instantiate(view, parent);
-            mgr.add_view(view);
-        }
         #endregion
 
 

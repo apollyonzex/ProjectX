@@ -1,6 +1,5 @@
 ﻿using Common;
 using Foundation;
-using UnityEngine;
 
 namespace World.Times
 {
@@ -67,9 +66,9 @@ namespace World.Times
         }
 
 
-        public void load_view(Transform parent)
+        public void add_cell(ITimeView view)
         {
-            EX_Utility.quick_add_view<TimeMgr, ITimeView, TimeView>(("ui", "parts/Time"), this, parent, out var _);
+            add_view(view);
         }
     }
 }
