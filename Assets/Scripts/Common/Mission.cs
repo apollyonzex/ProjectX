@@ -18,13 +18,13 @@ namespace Common
 
         public void attach_mgr(string name, IMgr mgr)
         {
-            EX_Utility.Opr.dic_cover_add(ref m_mgrs_dic, name, mgr);
+            EX_Utility.dic_cover_add(ref m_mgrs_dic, name, mgr);
         }
 
 
         public void detach_mgr(string name)
         {
-            EX_Utility.Opr.dic_safe_remove(ref m_mgrs_dic, name);
+            EX_Utility.dic_safe_remove(ref m_mgrs_dic, name);
         }
 
 

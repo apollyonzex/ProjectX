@@ -47,7 +47,7 @@ namespace Common
         public const string TimeMgr_Name = "ProjectileMgr";
 
         //普通管理类
-        
+        public const string RoomMgr_Name = "RoomMgr";
 
         #endregion
     }

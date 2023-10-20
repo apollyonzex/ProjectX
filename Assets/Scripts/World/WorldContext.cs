@@ -118,7 +118,7 @@ namespace World
                 foreach (var e in change_list)
                 {
                     if (e.state == EN_tick_action_state.add)
-                        EX_Utility.Opr.dic_cover_add(ref dic, e.name, e);
+                        EX_Utility.dic_cover_add(ref dic, e.name, e);
                     else if (e.state == EN_tick_action_state.remove)
                         dic.Remove(e.name);
                 }

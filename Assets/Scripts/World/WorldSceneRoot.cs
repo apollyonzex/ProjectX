@@ -4,6 +4,8 @@ namespace World
 {
     public class WorldSceneRoot : SceneRoot<WorldSceneRoot>
     {
+        public Rooms.RoomCreator room_creator;
+
         WorldContext ctx;
 
         //==================================================================================================
@@ -14,6 +16,7 @@ namespace World
             ctx.init();
 
             init_mgr();
+            init_module();
 
             ctx.can_start_tick = true;
         }
@@ -23,6 +26,12 @@ namespace World
         {
             var time_mgr = new Times.TimeMgr(Config.TimeMgr_Name);
             time_mgr.load_view(uiRoot.transform);
+        }
+
+
+        void init_module()
+        {
+            room_creator.@do();
         }
 
 

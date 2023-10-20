@@ -69,7 +69,7 @@ namespace World.Times
 
         public void load_view(Transform parent)
         {
-            EX_Utility.Opr.quick_add_view<TimeMgr, ITimeView, TimeView>(("ui", "parts/Time"), this, parent, out var _);
+            EX_Utility.quick_add_view<TimeMgr, ITimeView, TimeView>(("ui", "parts/Time"), this, parent, out var _);
         }
     }
 }
