@@ -30,6 +30,7 @@ namespace World.Rooms
         void IRoomView.notify_on_init(Room cell)
         {
             this.cell = cell;
+            transform.localPosition = cell.pos;
         }
     }
 }

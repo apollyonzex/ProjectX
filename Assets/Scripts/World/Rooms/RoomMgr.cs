@@ -38,15 +38,19 @@ namespace World.Rooms
         }
 
 
-        public void add_cell(int id, IRoomView view)
+        public void add_cell(Room cell, IRoomView view)
         {
-            var cell = new Room()
-            {
-                id = id,
-            };
-
             m_cell_dic.Add(cell, view);
             add_view(view);
+        }
+
+
+        public void load_view()
+        {
+            foreach (var (cell, view) in m_cell_dic)
+            {
+                view.notify_on_init(cell);
+            }
         }
     }
 }
