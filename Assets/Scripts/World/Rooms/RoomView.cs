@@ -31,6 +31,7 @@ namespace World.Rooms
         {
             this.cell = cell;
             transform.localPosition = cell.pos;
+            transform.localScale = cell.wh;
         }
     }
 }

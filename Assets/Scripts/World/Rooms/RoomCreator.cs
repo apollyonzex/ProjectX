@@ -1,5 +1,7 @@
 ﻿using Common;
+using System;
 using System.Collections.Generic;
+using UnityEngine;
 
 namespace World.Rooms
 {
@@ -7,6 +9,11 @@ namespace World.Rooms
     {
         public int num;
         public RoomView model;
+
+        public float radius;
+
+        public Vector2 wh_min;
+        public Vector2 wh_max;
 
         RoomMgr mgr;
 
@@ -18,6 +25,9 @@ namespace World.Rooms
 
             foreach (var cell in init_and_get_cells())
             {
+                var wh = calc_wh();
+                cell.wh = wh;
+                cell.pos = calc_diff_pos_in_circle(wh);
                 
             }
 
@@ -54,6 +64,31 @@ namespace World.Rooms
                 yield return cell;
             }
         }
+
+
+        Vector2 calc_diff_pos_in_circle(Vector2 wh)
+        {
+            var length = EX_Utility.rnd_float(0, radius);
+            var rad = EX_Utility.rnd_float(0, 360) * Mathf.Deg2Rad;
+
+            var dir = EX_Utility.convert_rad_to_dir(rad);
+            var pos = dir * length;
+
+            var offset_dir = -dir * Mathf.Sqrt(wh.x * wh.x + wh.y * wh.y) / 2;
+            pos += offset_dir;
+
+            return pos; 
+        }
+
+
+        Vector2 calc_wh()
+        {
+            var w = EX_Utility.rnd_float(wh_min.x, wh_max.x);
+            var h = EX_Utility.rnd_float(wh_min.y, wh_max.y);
+
+            return new Vector2(w, h);
+        }
+        
     }
 }
 

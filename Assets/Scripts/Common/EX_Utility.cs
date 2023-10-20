@@ -64,6 +64,20 @@ namespace Common
         {
             return quick_look_rotation_from_left(new Vector2(-dir.y, dir.x));
         }
+
+
+        /// <summary>
+        /// 转化：弧度 -> 方向
+        /// </summary>
+        public static Vector2 convert_rad_to_dir(float rad)
+        {
+            var dir =  new Vector2(1, MathF.Tan(rad)).normalized;
+
+            if (rad < 180 * Mathf.Deg2Rad && rad > -180 * Mathf.Deg2Rad)
+                return dir;
+            else
+                return new Vector2(-dir.x, -dir.y);
+        }
         #endregion
 
 
@@ -101,6 +115,16 @@ namespace Common
         public static int rnd_int(int min, int max)
         {
             return new System.Random().Next(min, max);
+        }
+
+
+        /// <summary>
+        /// 计算：向量旋转弧度
+        /// </summary>
+        public static float calc_rad_from_dirs(Vector2 from, Vector2 to)
+        {
+            var sub = to - from;
+            return Mathf.Atan2(sub.y, sub.x);
         }
         #endregion
 
