@@ -25,10 +25,8 @@ namespace World.Rooms
 
             foreach (var cell in init_and_get_cells())
             {
-                var wh = calc_wh();
-                cell.wh = wh;
-                cell.pos = calc_diff_pos_in_circle(wh);
-                
+                load_wh(cell);
+                load_pos(cell);
             }
 
             mgr.load_view();
@@ -66,7 +64,7 @@ namespace World.Rooms
         }
 
 
-        Vector2 calc_diff_pos_in_circle(Vector2 wh)
+        void load_pos(Room cell)
         {
             var length = EX_Utility.rnd_float(0, radius);
             var rad = EX_Utility.rnd_float(0, 360) * Mathf.Deg2Rad;
@@ -74,19 +72,19 @@ namespace World.Rooms
             var dir = EX_Utility.convert_rad_to_dir(rad);
             var pos = dir * length;
 
-            var offset_dir = -dir * Mathf.Sqrt(wh.x * wh.x + wh.y * wh.y) / 2;
+            var offset_dir = -dir * cell.wh.magnitude / 2; 
             pos += offset_dir;
 
-            return pos; 
+            cell.pos = pos;
         }
 
 
-        Vector2 calc_wh()
+        void load_wh(Room cell)
         {
             var w = EX_Utility.rnd_float(wh_min.x, wh_max.x);
             var h = EX_Utility.rnd_float(wh_min.y, wh_max.y);
 
-            return new Vector2(w, h);
+            cell.wh = new Vector2(w, h);
         }
         
     }
