@@ -33,7 +33,13 @@ namespace Battle
         }
 
 
-        public void btn_end_battle()
+        public void btn_vectory()
+        {
+            root.btn_end_battle();
+        }
+
+
+        public void btn_fail()
         {
             root.btn_end_battle();
         }
