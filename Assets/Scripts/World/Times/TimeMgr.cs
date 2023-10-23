@@ -17,7 +17,8 @@ namespace World.Times
         WorldContext ctx;
 
         int m_delta;
-        public string view_time => ctx.world_time.ToString();
+        //public string view_time => ctx.world_time.ToString();
+        public string view_time => "0";
 
         //==================================================================================================
 
@@ -46,23 +47,23 @@ namespace World.Times
 
         void tick()
         {
-            m_delta++;
-            if (m_delta == 120)
-            {
-                m_delta = 0;
-                ctx.world_time++;
-            }
+            //m_delta++;
+            //if (m_delta == 120)
+            //{
+            //    m_delta = 0;
+            //    ctx.world_time++;
+            //}
         }
 
 
         void tick1()
         {
-            if (m_delta != 0) return;
+            //if (m_delta != 0) return;
 
-            foreach (var view in views)
-            {
-                view.notify_on_tick1();
-            }
+            //foreach (var view in views)
+            //{
+            //    view.notify_on_tick1();
+            //}
         }
 
 

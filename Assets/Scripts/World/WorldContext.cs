@@ -9,7 +9,7 @@ namespace World
     public class WorldContext : Singleton<WorldContext>
     {
         #region outter
-        public int world_time;
+        public bool is_battle;
         #endregion
 
         //==================================================================================================
