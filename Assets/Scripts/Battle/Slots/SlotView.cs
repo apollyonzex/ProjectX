@@ -1,33 +1,33 @@
 ﻿using Foundation;
 using UnityEngine;
 
-namespace #namespace#
+namespace Battle.Slots
 {
-    public class #name# : MonoBehaviour, #iview#
+    public class SlotView : MonoBehaviour, ISlotView
     {
-        #mgr# mgr;
-        #cell# cell;
+        SlotMgr mgr;
+        Slot cell;
 
         //==================================================================================================
 
-        void IModelView<#mgr#>.attach(#mgr# mgr)
+        void IModelView<SlotMgr>.attach(SlotMgr mgr)
         {
             this.mgr = mgr;
         }
 
 
-        void IModelView<#mgr#>.detach(#mgr# mgr)
+        void IModelView<SlotMgr>.detach(SlotMgr mgr)
         {
             this.mgr = null;
         }
 
 
-        void IModelView<#mgr#>.shift(#mgr# old_mgr, #mgr# new_mgr)
+        void IModelView<SlotMgr>.shift(SlotMgr old_mgr, SlotMgr new_mgr)
         {
         }
 
 
-        void #iview#.notify_on_init(#cell# cell)
+        void ISlotView.notify_on_init(Slot cell)
         {
             this.cell = cell;
         }

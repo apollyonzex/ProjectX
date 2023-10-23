@@ -24,11 +24,13 @@ namespace Editor.AutoCreators
 
         static void create_diy_fields(ref string txt, string folder_name)
         {
-            var e = folder_name.TrimEnd('s');
-            var iview = $"I{e}View";
+            var cell = folder_name.TrimEnd('s');
+            txt = Regex.Replace(txt, "#cell#", cell);
+
+            var iview = $"I{cell}View";
             txt = Regex.Replace(txt, "#iview#", iview);
 
-            var mgr = $"{e}Mgr";
+            var mgr = $"{cell}Mgr";
             txt = Regex.Replace(txt, "#mgr#", mgr);
         }
     }

@@ -46,6 +46,7 @@ namespace Editor.AutoCreators
             }
 
             string[] strs = path.Split('/');
+
             assembly_name = strs[strs.Length - 2];
             folder_name = strs[strs.Length - 1];
 

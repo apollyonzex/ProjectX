@@ -2,24 +2,24 @@
 using Foundation;
 using System.Collections.Generic;
 
-namespace #namespace#
+namespace Battle.Slots
 {
-    public interface #iview# : IModelView<#name#>
+    public interface ISlotView : IModelView<SlotMgr>
     { 
-        void notify_on_init(#cell# cell);
+        void notify_on_init(Slot cell);
     }
 
 
-    public class #name# : Model<#name#, #iview#>, IMgr
+    public class SlotMgr : Model<SlotMgr, ISlotView>, IMgr
     {
         string IMgr.name => m_mgr_name;
         readonly string m_mgr_name;
 
-        Dictionary<#cell#, #iview#> m_cell_dic = new();
+        Dictionary<Slot, ISlotView> m_cell_dic = new();
 
         //==================================================================================================
 
-        public #name#(string name, params object[] objs)
+        public SlotMgr(string name, params object[] objs)
         {
             m_mgr_name = name;
             (this as IMgr).init(objs);
@@ -38,7 +38,7 @@ namespace #namespace#
         }
 
 
-        public void add_cell(#cell# cell, #iview# view)
+        public void add_cell(Slot cell, ISlotView view)
         {
             m_cell_dic.Add(cell, view);
             add_view(view);
