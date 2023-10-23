@@ -48,6 +48,7 @@ namespace Common
 
         //普通管理类
         public const string RoomMgr_Name = "RoomMgr";
+        public const string BattleFieldMgr_Name = "BattleFieldMgr";
 
         #endregion
     }

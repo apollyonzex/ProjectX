@@ -3,6 +3,7 @@ using Foundation.Tables;
 using System;
 using System.Linq;
 using System.Reflection;
+using UnityEngine.SceneManagement;
 
 namespace Common
 {
@@ -38,6 +39,28 @@ namespace Common
             if (ab == null) return;
 
             ab.load_scene(bundle, path, default);
+        }
+
+
+        /// <summary>
+        /// 异步加载场景，不销毁现有场景
+        /// </summary>
+        public static AssetBundleManager.ISceneRequest load_scene_async(string bundle, string path)
+        {
+            var ab = AssetBundleManager.instance;
+            if (ab == null) return null;
+
+            return ab.load_scene_async(bundle, path, new UnityEngine.SceneManagement.LoadSceneParameters(UnityEngine.SceneManagement.LoadSceneMode.Additive));
+        }
+
+
+        /// <summary>
+        /// 异步销毁指定场景
+        /// </summary>
+        public static UnityEngine.AsyncOperation unload_scene_async(string name)
+        {
+            var scene = SceneManager.GetSceneByName(name);
+            return SceneManager.UnloadSceneAsync(scene);
         }
 
 
