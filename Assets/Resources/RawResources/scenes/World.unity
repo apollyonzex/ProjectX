@@ -876,8 +876,6 @@ MonoBehaviour:
   uiRoot: {fileID: 396267754}
   monoRoot: {fileID: 214487560}
   creators: []
-  ui_none: {fileID: 860461770}
-  ui_battle: {fileID: 847348535}
 --- !u!1 &1610941191
 GameObject:
   m_ObjectHideFlags: 0

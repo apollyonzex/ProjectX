@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace World
+namespace Common
 {
     public abstract class Creator : MonoBehaviour
     {

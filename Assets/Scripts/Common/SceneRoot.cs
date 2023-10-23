@@ -9,6 +9,8 @@ namespace Common
         public Camera uiCamera;
         public Canvas uiRoot;
         public Transform monoRoot;
+
+        //==================================================================================================
     }
 }
 

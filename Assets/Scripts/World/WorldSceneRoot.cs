@@ -7,8 +7,6 @@ namespace World
     public class WorldSceneRoot : SceneRoot<WorldSceneRoot>
     {
         public Creator[] creators;
-        public GameObject ui_none;
-        public GameObject ui_battle;
 
         WorldContext ctx;
 
@@ -42,10 +40,9 @@ namespace World
 
         public void btn_enter_battle()
         {
-            Battle_In_Out_Helper.instance.enter_battle(ctx);
+            ui_active(false);
 
-            ui_none.SetActive(false);
-            ui_battle.SetActive(true);
+            Battle_In_Out_Helper.instance.enter_battle(ctx);
         }
 
 
@@ -53,8 +50,14 @@ namespace World
         {
             Battle_In_Out_Helper.instance.end_battle(ctx);
 
-            ui_battle.SetActive(false);
-            ui_none.SetActive(true);
+            ui_active(true);
+        }
+
+
+        void ui_active(bool bl)
+        {
+            uiRoot.gameObject.SetActive(bl);
+            monoRoot.gameObject.SetActive(bl);
         }
     }
 }
