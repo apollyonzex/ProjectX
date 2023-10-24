@@ -1,0 +1,16 @@
+﻿using Common;
+
+namespace #namespace#
+{
+    public class #name# : Trigger
+    {
+
+        //==================================================================================================
+
+        public override void @do()
+        {
+            
+        }
+    }
+}
+
