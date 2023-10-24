@@ -30,6 +30,8 @@ namespace Battle.Slots
         void ISlotView.notify_on_init(Slot cell)
         {
             this.cell = cell;
+
+            transform.localPosition = cell.view_pos;
         }
     }
 }

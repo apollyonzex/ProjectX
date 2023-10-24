@@ -48,7 +48,11 @@ namespace Common
 
         //普通管理类
         public const string RoomMgr_Name = "RoomMgr";
-        public const string BattleFieldMgr_Name = "BattleFieldMgr";
+
+        public const string SlotMgr_Player_Front_Name = "p_front_slot";
+        public const string SlotMgr_Player_Back_Name = "p_back_slot";
+        public const string SlotMgr_Enemy_Front_Name = "e_front_slot";
+        public const string SlotMgr_Enemy_Back_Name = "e_back_slot";
 
         #endregion
     }
