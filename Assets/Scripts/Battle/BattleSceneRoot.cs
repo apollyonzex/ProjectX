@@ -1,12 +1,12 @@
 ﻿using Common;
 using World;
-using World.Helpers;
 
 namespace Battle
 {
     public class BattleSceneRoot : SceneRoot<BattleSceneRoot>
     {
         public Creator[] creators;
+        public Trigger[] triggers;
 
         WorldContext ctx;
         WorldSceneRoot root;
@@ -20,13 +20,24 @@ namespace Battle
             uiRoot.worldCamera = uiCamera;
 
             ctx = WorldContext.instance;
-            init_module();
+            
+            init_modules();
+            run_triggers();
         }
 
 
-        void init_module()
+        void init_modules()
         {
             foreach (var e in creators)
+            {
+                e.@do();
+            }
+        }
+
+
+        void run_triggers()
+        {
+            foreach (var e in triggers)
             {
                 e.@do();
             }
@@ -42,6 +53,12 @@ namespace Battle
         public void btn_fail()
         {
             root.btn_end_battle();
+        }
+
+
+        public void btn_end_turn()
+        {
+            run_triggers();
         }
     }
 }
