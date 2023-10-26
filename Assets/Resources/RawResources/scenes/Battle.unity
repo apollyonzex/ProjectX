@@ -576,7 +576,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   count: 5
-  y: 3.1
+  y: 2.3
   mgr_name: e_back_slot
   model: {fileID: 7736021351614393196, guid: 6547df39d87d46842ba5488090174721, type: 3}
 --- !u!1 &863703343
@@ -1004,7 +1004,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   count: 5
-  y: 1.6
+  y: 1
   mgr_name: e_front_slot
   model: {fileID: 7736021351614393196, guid: 6547df39d87d46842ba5488090174721, type: 3}
 --- !u!1 &1341879678
@@ -1293,7 +1293,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1712869962
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1414,7 +1414,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1755976512
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1636,7 +1636,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   count: 5
-  y: -0.4
+  y: -0.6
   mgr_name: p_front_slot
   model: {fileID: 7736021351614393196, guid: 6547df39d87d46842ba5488090174721, type: 3}
 --- !u!4 &2146312823
