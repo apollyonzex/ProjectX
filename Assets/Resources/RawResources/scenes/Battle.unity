@@ -724,6 +724,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1144597776}
   - component: {fileID: 1144597777}
+  - component: {fileID: 1144597778}
   m_Layer: 5
   m_Name: handcards
   m_TagString: Untagged
@@ -777,6 +778,20 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &1144597778
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1144597775}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3763b6901b2f6464e808bee0e8459d89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  count: 7
+  model: {fileID: 749892418581670703, guid: 1fa8fed7c7c853346af20018ad8603a2, type: 3}
 --- !u!1 &1188019027
 GameObject:
   m_ObjectHideFlags: 0
@@ -1605,7 +1620,8 @@ MonoBehaviour:
   - {fileID: 1188019029}
   - {fileID: 1257271221}
   - {fileID: 677111541}
-  triggers: []
+  triggers:
+  - {fileID: 1144597778}
 --- !u!1 &2146312820
 GameObject:
   m_ObjectHideFlags: 0

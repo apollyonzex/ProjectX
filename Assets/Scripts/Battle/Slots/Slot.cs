@@ -11,6 +11,11 @@ namespace Battle.Slots
 
         //==================================================================================================
 
+        public Slot(int id, Vector2 pos)
+        {
+            this.id = id;
+            this.pos = pos;
+        }
     }
 }
 

@@ -10,6 +10,8 @@ namespace World
     {
         #region outter
         public bool is_battle;
+
+        public BattleContext bctx;
         #endregion
 
         //==================================================================================================

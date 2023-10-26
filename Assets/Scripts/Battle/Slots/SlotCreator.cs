@@ -1,5 +1,6 @@
 ﻿using Common;
 using System.Collections.Generic;
+using UnityEngine;
 
 namespace Battle.Slots
 {
@@ -23,8 +24,9 @@ namespace Battle.Slots
             {
                 var view = Instantiate(model, transform);
                 mgr.add_cell(cell, view);
-                mgr.load_view();
             }
+
+            mgr.load_view();
         }
 
 
@@ -32,11 +34,8 @@ namespace Battle.Slots
         {
             for (int i = 0; i < count; i++)
             {
-                Slot cell = new()
-                {
-                    id = i,
-                    pos = new(i * 1.5f - 3, y),
-                };
+                Vector2 pos = new(i * 1.5f - 3, y);
+                Slot cell = new(i, pos);
 
                 yield return cell;
             }

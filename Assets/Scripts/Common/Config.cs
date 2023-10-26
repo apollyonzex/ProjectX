@@ -41,18 +41,16 @@ namespace Common
 
         #region internal_setting
         //tick优先级
-        public const int TimeMgr_Priority = 1;
 
         //tick管理类
-        public const string TimeMgr_Name = "ProjectileMgr";
 
         //普通管理类
-        public const string RoomMgr_Name = "RoomMgr";
-
         public const string SlotMgr_Player_Front_Name = "p_front_slot";
         public const string SlotMgr_Player_Back_Name = "p_back_slot";
         public const string SlotMgr_Enemy_Front_Name = "e_front_slot";
         public const string SlotMgr_Enemy_Back_Name = "e_back_slot";
+
+        public const string HandCardMgr_Name = "HandCardMgr";
 
         #endregion
     }
