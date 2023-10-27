@@ -6,7 +6,7 @@ namespace Init
     {
         public override void enter(Game.IState last)
         {
-            Common.Base_Utility.load_scene("scenes", "Init");
+            Common.EX_Utility.load_scene("scenes", "Init");
         }
     }
 }

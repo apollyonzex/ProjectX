@@ -25,8 +25,6 @@ namespace Battle.Slots
                 var view = Instantiate(model, transform);
                 mgr.add_cell(cell, view);
             }
-
-            mgr.load_view();
         }
 
 

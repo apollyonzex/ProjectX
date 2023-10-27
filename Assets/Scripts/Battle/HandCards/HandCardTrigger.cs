@@ -1,5 +1,6 @@
 ﻿using Common;
 using System.Collections.Generic;
+using UnityEngine;
 using World;
 
 namespace Battle.HandCards
@@ -17,7 +18,6 @@ namespace Battle.HandCards
         {
             if (!Mission.instance.try_get_mgr(Config.HandCardMgr_Name, out mgr))
                 mgr = new(Config.HandCardMgr_Name);
-
 
             add_cells();
         }
@@ -42,14 +42,16 @@ namespace Battle.HandCards
             foreach (var cell in cells())
             {
                 var view = Instantiate(model, transform);
+                //cell.init(view.gameObject.transform.position);
+
                 mgr.add_cell(cell, view);
             }
         }
 
 
         void remove_cells()
-        { 
-            
+        {
+
         }
     }
 }

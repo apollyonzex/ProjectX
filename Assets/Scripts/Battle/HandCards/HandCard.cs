@@ -1,12 +1,16 @@
-﻿namespace Battle.HandCards
+﻿using UnityEngine;
+
+namespace Battle.HandCards
 {
     public class HandCard
     {
+        public Vector2 pos;
 
         //==================================================================================================
 
-        public HandCard()
-        {  
+        public void init(Vector2 pos)
+        {
+            this.pos = pos;
         }
     }
 }

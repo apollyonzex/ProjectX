@@ -1,4 +1,5 @@
 ﻿using Common;
+using System;
 using UnityEngine;
 using World.Helpers;
 
@@ -17,9 +18,17 @@ namespace World
             ctx = WorldContext._init();
             ctx.init();
 
+            init_helpers();
             init_module();
 
             ctx.can_start_tick = true;
+        }
+
+
+        void init_helpers()
+        {
+            var mouse_h = Common.Helpers.Mouse_Move_Helper._init();
+            mouse_h.init(uiCamera);
         }
 
 

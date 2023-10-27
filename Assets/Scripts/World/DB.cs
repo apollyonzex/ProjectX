@@ -12,7 +12,7 @@ namespace World
             {
                 if (m_element == null)
                 {
-                    Base_Utility.try_load_table("element", out m_element);
+                    EX_Utility.try_load_table("element", out m_element);
                 }
 
                 return m_element;

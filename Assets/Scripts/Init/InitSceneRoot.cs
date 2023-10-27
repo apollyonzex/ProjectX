@@ -8,7 +8,7 @@ namespace Init
         public void btn_start()
         {
             Mission._init();
-            Base_Utility.load_game_state("World.WorldState", "World");
+            EX_Utility.load_game_state("World.WorldState", "World");
         }
 
 

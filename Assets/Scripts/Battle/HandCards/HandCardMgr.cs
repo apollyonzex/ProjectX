@@ -1,5 +1,6 @@
 ﻿using Common;
 using Foundation;
+using System;
 using System.Collections.Generic;
 using World;
 
@@ -8,6 +9,7 @@ namespace Battle.HandCards
     public interface IHandCardView : IModelView<HandCardMgr>
     { 
         void notify_on_init(HandCard cell);
+        void notify_on_tick1();
     }
 
 
@@ -36,14 +38,34 @@ namespace Battle.HandCards
         void IMgr.init(object[] objs)
         {
             Mission.instance.attach_mgr(m_mgr_name, this);
+
+            var ctx = WorldContext.instance;
+            ctx.add_tick(Config.HandCardMgr_Priority, Config.HandCardMgr_Name, tick);
+            ctx.add_tick1(Config.HandCardMgr_Priority, Config.HandCardMgr_Name, tick1);
+        }
+
+
+        void tick()
+        {
+            
+        }
+
+
+        void tick1()
+        {
+            foreach (var view in views)
+            {
+                view.notify_on_tick1();
+            }
         }
 
 
         public void add_cell(HandCard cell, IHandCardView view)
         {
             m_cell_list.AddLast(cell);
-            add_view(view);
+
             view.notify_on_init(cell);
+            add_view(view);
 
             WorldContext.instance.bctx.handcard_count = m_cell_list.Count;
         }
@@ -52,6 +74,12 @@ namespace Battle.HandCards
         public void remove_cell(HandCard cell)
         {
             m_cell_list.Remove(cell);
+        }
+
+
+        public void play(HandCard cell)
+        { 
+            
         }
     }
 }

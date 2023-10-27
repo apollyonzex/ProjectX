@@ -15,7 +15,7 @@ namespace Battle.Slots
         string IMgr.name => m_mgr_name;
         readonly string m_mgr_name;
 
-        Dictionary<Slot, ISlotView> m_cell_dic = new();
+        Dictionary<int, Slot> m_cell_dic = new();
 
         //==================================================================================================
 
@@ -40,17 +40,10 @@ namespace Battle.Slots
 
         public void add_cell(Slot cell, ISlotView view)
         {
-            m_cell_dic.Add(cell, view);
+            m_cell_dic.Add(cell.id, cell);
+
+            view.notify_on_init(cell);
             add_view(view);
-        }
-
-
-        public void load_view()
-        {
-            foreach (var (cell, view) in m_cell_dic)
-            {
-                view.notify_on_init(cell);
-            }
         }
     }
 }

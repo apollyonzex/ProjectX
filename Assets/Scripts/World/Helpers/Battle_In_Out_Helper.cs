@@ -7,7 +7,7 @@ namespace World.Helpers
         public void enter_battle(WorldContext ctx)
         {
             ctx.bctx = new();
-            Base_Utility.load_scene_async("scenes", "Battle");
+            EX_Utility.load_scene_async("scenes", "Battle");
 
             ctx.is_battle = true;
         }
@@ -15,7 +15,7 @@ namespace World.Helpers
 
         public void end_battle(WorldContext ctx)
         {
-            Base_Utility.unload_scene_async("Battle");
+            EX_Utility.unload_scene_async("Battle");
 
             ctx.is_battle = false;
         }

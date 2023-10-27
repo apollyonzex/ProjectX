@@ -9,6 +9,8 @@ namespace Battle.HandCards
         HandCardMgr mgr;
         HandCard cell;
 
+        Common.Helpers.Mouse_Move_Helper mouse_h;
+
         //==================================================================================================
 
         void IModelView<HandCardMgr>.attach(HandCardMgr mgr)
@@ -31,24 +33,35 @@ namespace Battle.HandCards
         void IHandCardView.notify_on_init(HandCard cell)
         {
             this.cell = cell;
+
+            mouse_h = Common.Helpers.Mouse_Move_Helper.instance;
         }
 
 
-        void IPointerUpHandler.OnPointerUp(PointerEventData eventData)
+        void IHandCardView.notify_on_tick1()
         {
-            Debug.Log("up");
+            //transform.position = cell.pos;
+            Debug.Log(transform.position);
         }
 
 
         void IPointerDownHandler.OnPointerDown(PointerEventData eventData)
         {
-            Debug.Log("down");
+            mouse_h.calc_offset(transform.position);
+        }
+
+
+        void IPointerUpHandler.OnPointerUp(PointerEventData eventData)
+        {
+            
+
+            mouse_h.clear();
         }
 
 
         void IDragHandler.OnDrag(PointerEventData eventData)
         {
-            Debug.Log("ing");
+            cell.pos = mouse_h.drag_pos;
         }
     }
 }

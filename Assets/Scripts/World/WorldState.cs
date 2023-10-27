@@ -6,7 +6,7 @@ namespace World
     {
         public override void enter(Game.IState last)
         {
-            Common.Base_Utility.load_scene("scenes", "World");
+            Common.EX_Utility.load_scene("scenes", "World");
         }
     }
 }
