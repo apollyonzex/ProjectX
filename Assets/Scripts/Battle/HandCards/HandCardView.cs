@@ -60,7 +60,8 @@ namespace Battle.HandCards
 
         void IPointerUpHandler.OnPointerUp(PointerEventData eventData)
         {
-            mgr.remove_cell(cell);
+            mgr.play(cell);
+
             mouse_h.clear();
         }
 

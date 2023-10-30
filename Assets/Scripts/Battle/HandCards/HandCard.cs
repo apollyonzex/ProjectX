@@ -14,7 +14,6 @@ namespace Battle.HandCards
             World.DB.instance.card.try_get(id, out _desc);
            
             Utility.expr_convert(_desc.f_use_func, out use_func, out var _);
-            use_func.@do();
         }
     }
 }

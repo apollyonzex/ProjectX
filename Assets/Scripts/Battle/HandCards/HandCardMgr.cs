@@ -97,8 +97,10 @@ namespace Battle.HandCards
 
 
         public void play(HandCard cell)
-        { 
-            
+        {
+            cell.use_func.@do();
+
+            remove_cell(cell);
         }
     }
 }

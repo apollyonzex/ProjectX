@@ -30,7 +30,7 @@ namespace Battle.HandCards
             for (int i = 0; i < count - hold_count; i++)
             {
                 var id = (uint)EX_Utility.rnd_int(1,5);
-                HandCard cell = new(1);
+                HandCard cell = new(id);
 
                 yield return cell;
             }

@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Battle.HandCards.Funcs
 {
@@ -8,10 +6,13 @@ namespace Battle.HandCards.Funcs
     {
         int i;
 
+        //==================================================================================================
+
         public Test_Func(int i)
         {
             this.i = i;
         }
+
 
         bool IFunc.@do()
         {
