@@ -9,9 +9,13 @@ namespace Battle.HandCards.Funcs
 
         //==================================================================================================
 
-        public static bool expr_convert(IExprTree value, out object obj, out string err_msg)
+        public static bool expr_convert<T>(IExprTree value, out T t, out string err_msg) where T : class, IFunc 
         {
-            return converter.convert(value, out obj, out err_msg);
+            t = null;
+            if (!converter.convert(value, out var obj, out err_msg)) return false;
+
+            t = obj as T;
+            return true;
         }
     }
 
@@ -27,9 +31,9 @@ namespace Battle.HandCards.Funcs
             this.f2 = f2;
         }
 
-        bool IFunc.exec()
+        bool IFunc.@do()
         {
-            return f1.exec() && f2.exec();
+            return f1.@do() && f2.@do();
         }
     }
 }

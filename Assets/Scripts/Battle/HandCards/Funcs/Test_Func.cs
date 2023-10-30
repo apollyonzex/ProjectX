@@ -13,7 +13,7 @@ namespace Battle.HandCards.Funcs
             this.i = i;
         }
 
-        bool IFunc.exec()
+        bool IFunc.@do()
         {
             Debug.Log(i);
             return true;

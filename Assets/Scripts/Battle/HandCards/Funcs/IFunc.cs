@@ -6,7 +6,7 @@ namespace Battle.HandCards.Funcs
 {
     public interface IFunc
     {
-        bool exec();
+        bool @do();
     }
 }
 

@@ -1,12 +1,11 @@
 ﻿using Battle.HandCards.Funcs;
-using Foundation.Tables;
-using UnityEngine;
 
 namespace Battle.HandCards
 {
     public class HandCard
     {
         public AutoCode.Tables.Card.Record _desc;
+        public IFunc use_func;
 
         //==================================================================================================
 
@@ -14,8 +13,8 @@ namespace Battle.HandCards
         {
             World.DB.instance.card.try_get(id, out _desc);
            
-            Utility.expr_convert(_desc.f_use_func, out var obj, out var err_msg);
-            (obj as IFunc).exec();
+            Utility.expr_convert(_desc.f_use_func, out use_func, out var _);
+            use_func.@do();
         }
     }
 }
