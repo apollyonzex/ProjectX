@@ -1,15 +1,20 @@
 ﻿using Foundation;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using TMPro;
 
 namespace Battle.HandCards
 {
     public class HandCardView : MonoBehaviour, IHandCardView, IDragHandler, IPointerDownHandler, IPointerUpHandler
     {
+        public TextMeshProUGUI title;
+
         HandCardMgr mgr;
         HandCard cell;
 
         Common.Helpers.Mouse_Move_Helper mouse_h;
+
+        HandCard IHandCardView.cell => cell;
 
         //==================================================================================================
 
@@ -22,6 +27,8 @@ namespace Battle.HandCards
         void IModelView<HandCardMgr>.detach(HandCardMgr mgr)
         {
             this.mgr = null;
+
+            DestroyImmediate(gameObject);
         }
 
 
@@ -34,14 +41,14 @@ namespace Battle.HandCards
         {
             this.cell = cell;
 
+            title.text = cell._desc.f_title;
+
             mouse_h = Common.Helpers.Mouse_Move_Helper.instance;
         }
 
 
         void IHandCardView.notify_on_tick1()
         {
-            //transform.position = cell.pos;
-            Debug.Log(transform.position);
         }
 
 
@@ -53,15 +60,14 @@ namespace Battle.HandCards
 
         void IPointerUpHandler.OnPointerUp(PointerEventData eventData)
         {
-            
-
+            mgr.remove_cell(cell);
             mouse_h.clear();
         }
 
 
         void IDragHandler.OnDrag(PointerEventData eventData)
         {
-            cell.pos = mouse_h.drag_pos;
+            transform.position = mouse_h.drag_pos;
         }
     }
 }

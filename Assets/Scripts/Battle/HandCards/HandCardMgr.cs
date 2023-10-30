@@ -1,7 +1,7 @@
 ﻿using Common;
 using Foundation;
-using System;
 using System.Collections.Generic;
+using System.Linq;
 using World;
 
 namespace Battle.HandCards
@@ -10,6 +10,8 @@ namespace Battle.HandCards
     { 
         void notify_on_init(HandCard cell);
         void notify_on_tick1();
+
+        HandCard cell { get; }
     }
 
 
@@ -18,7 +20,8 @@ namespace Battle.HandCards
         string IMgr.name => m_mgr_name;
         readonly string m_mgr_name;
 
-        LinkedList<HandCard> m_cell_list = new();
+        LinkedList<HandCard> m_cells = new();
+        List<IHandCardView> m_del_views = new();
 
         //==================================================================================================
 
@@ -57,23 +60,39 @@ namespace Battle.HandCards
             {
                 view.notify_on_tick1();
             }
+
+            if (m_del_views.Any())
+            {
+                foreach (var view in m_del_views)
+                {
+                    remove_view(view);
+                }
+                m_del_views.Clear();
+            }
         }
 
 
         public void add_cell(HandCard cell, IHandCardView view)
         {
-            m_cell_list.AddLast(cell);
+            m_cells.AddLast(cell);
 
             view.notify_on_init(cell);
             add_view(view);
 
-            WorldContext.instance.bctx.handcard_count = m_cell_list.Count;
+            WorldContext.instance.bctx.handcard_count = m_cells.Count;
         }
 
 
         public void remove_cell(HandCard cell)
         {
-            m_cell_list.Remove(cell);
+            m_cells.Remove(cell);
+
+            foreach (var view in views.Where(t => t.cell == cell))
+            {
+                m_del_views.Add(view);
+            }
+
+            WorldContext.instance.bctx.handcard_count = m_cells.Count;
         }
 
 

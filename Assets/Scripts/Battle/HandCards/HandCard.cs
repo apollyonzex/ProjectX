@@ -4,13 +4,13 @@ namespace Battle.HandCards
 {
     public class HandCard
     {
-        public Vector2 pos;
+        public AutoCode.Tables.Card.Record _desc;
 
         //==================================================================================================
 
-        public void init(Vector2 pos)
+        public HandCard(uint id)
         {
-            this.pos = pos;
+            World.DB.instance.card.try_get(id, out _desc); 
         }
     }
 }

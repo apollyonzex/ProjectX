@@ -22,7 +22,7 @@ namespace Battle
             ctx = WorldContext.instance;
             
             init_modules();
-            run_triggers();
+            run_triggers(true);
         }
 
 
@@ -35,11 +35,11 @@ namespace Battle
         }
 
 
-        void run_triggers()
+        void run_triggers(bool is_init = false)
         {
             foreach (var e in triggers)
             {
-                e.@do();
+                e.@do(is_init);
             }
         }
 

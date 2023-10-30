@@ -5,17 +5,17 @@ namespace World
 {
     public class DB : Singleton<DB>
     {
-        Element m_element;
-        public Element element
+        Card m_card;
+        public Card card
         {
             get
             {
-                if (m_element == null)
+                if (m_card == null)
                 {
-                    EX_Utility.try_load_table("element", out m_element);
+                    EX_Utility.try_load_table("card", out m_card);
                 }
 
-                return m_element;
+                return m_card;
             }
         }
     }
