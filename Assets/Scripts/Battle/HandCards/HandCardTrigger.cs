@@ -12,8 +12,6 @@ namespace Battle.HandCards
 
         HandCardMgr mgr;
 
-        BT_Context bctx;
-
         //==================================================================================================
 
         public override void @do(bool is_init)
@@ -22,15 +20,6 @@ namespace Battle.HandCards
                 mgr = new(Config.HandCardMgr_Name);
 
             add_cells();
-
-            //测试
-            if (is_init)
-            {
-                EX_Utility.try_load_asset(("enemys", "bt_graphs/mbt_001"), out BT_GraphAsset asset);
-                bctx = new(asset);
-            }
-
-            bctx.tick();
         }
 
 
