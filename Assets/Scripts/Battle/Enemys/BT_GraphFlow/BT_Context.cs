@@ -6,27 +6,18 @@ namespace Battle.Enemys.BT_GraphFlow
 {
     public class BT_Context : IContext
     {
+        public Enum.EN_ret_state ret = Enum.EN_ret_state.none;
+        public Stack<BT_Decide_Node> decide_nodes = new();
+
         Type IContext.context_type => typeof(BT_Context);
 
         System.Action<BT_Context> m_start;
-
-        public Enum.EN_ret_state ret = Enum.EN_ret_state.none;
-        public Stack<BT_Decide_Node> decide_nodes = new();
 
         //================================================================================================
 
         public BT_Context(BT_GraphAsset asset)
         {
-            var graph = asset.graph;
-
-            foreach (var node in graph.nodes)
-            {
-                if (node is Nodes.StartNode _s)
-                {
-                    m_start = _s.do_start;
-                    break;
-                }
-            }
+            m_start = asset.graph.start_ac;
         }
 
 
