@@ -7,8 +7,6 @@ namespace Battle.Enemys.BT_GraphFlow.Nodes
     [Graph(typeof(BT_Graph))]
     public class SequenceNode : BT_Decide_Node
     {
-        public int seq;
-
         const int max_o_count = 5;
 
         //==================================================================================================
@@ -69,21 +67,6 @@ namespace Battle.Enemys.BT_GraphFlow.Nodes
         [Display("5")]
         public System.Action<BT_Context> _o5 { get; set; }
         #endregion
-
-
-        System.Action<BT_Context> select_ac(int _seq)
-        {
-            var mi = GetType().GetMethod($"get__o{_seq}");
-            return (System.Action<BT_Context>)mi?.Invoke(this, null);
-        }
-
-
-        void jump_out(BT_Context ctx)
-        {
-            seq = 0;
-            ctx.decide_nodes.Pop();
-            ctx.try_do_back();
-        }
 
 
         public override void do_back(BT_Context ctx)
