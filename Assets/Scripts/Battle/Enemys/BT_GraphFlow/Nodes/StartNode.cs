@@ -17,6 +17,8 @@ namespace Battle.Enemys.BT_GraphFlow.Nodes
         public void do_start(BT_Context ctx)
         {
             Debug.Log("start");
+
+            ctx.ret = Enum.EN_ret_state.none;
             _o?.Invoke(ctx);
         }
     }

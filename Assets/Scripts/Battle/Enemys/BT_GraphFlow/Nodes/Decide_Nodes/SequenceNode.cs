@@ -24,19 +24,18 @@ namespace Battle.Enemys.BT_GraphFlow.Nodes
                 ctx.decide_nodes.Push(this);
             }
 
-            if (ctx.ret == Enum.EN_ret_state.fail) return; //失败检定：子节点失败，则本节点失败
+            if (ctx.ret == Enum.EN_ret_state.fail) //跳出检定：子节点fail，则本节点fail
+            {
+                jump_out(ctx);
+                return;
+            }
 
             var ac = select_ac(++seq);
 
-            if (seq > max_o_count || ac == null) //last检定
+            if (seq > max_o_count || ac == null) //last检定：返回success
             {
-                seq = 0;
-
                 ctx.ret = Enum.EN_ret_state.success;
-                ctx.decide_nodes.Pop();
-
-                ctx.try_do_back();
-
+                jump_out(ctx);
                 return;
             }
 
@@ -79,12 +78,18 @@ namespace Battle.Enemys.BT_GraphFlow.Nodes
         }
 
 
+        void jump_out(BT_Context ctx)
+        {
+            seq = 0;
+            ctx.decide_nodes.Pop();
+            ctx.try_do_back();
+        }
+
+
         public override void do_back(BT_Context ctx)
         {
             _i(ctx);
         }
-
-
 
     }
 }
