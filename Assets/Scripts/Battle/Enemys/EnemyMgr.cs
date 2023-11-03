@@ -43,10 +43,10 @@ namespace Battle.Enemys
 
         void tick()
         {
-            foreach (var (_,cell) in cell_dic)
-            {
-                cell.bctx.tick();
-            }
+            //foreach (var (_,cell) in cell_dic)
+            //{
+            //    cell.bctx.tick();
+            //}
         }
 
 

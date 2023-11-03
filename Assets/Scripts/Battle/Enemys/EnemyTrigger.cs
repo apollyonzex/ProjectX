@@ -7,6 +7,8 @@ namespace Battle.Enemys
 {
     public class EnemyTrigger : Trigger
     {
+        public int count;
+
         //==================================================================================================
 
         public override void @do(bool is_init)
@@ -22,12 +24,18 @@ namespace Battle.Enemys
                     mgr.add_cell(cell, null);
                 }
             }
+
+            Mission.instance.try_get_mgr(Config.EnemyMgr_Name, out EnemyMgr _mgr);
+            foreach (var (_,cell) in _mgr.cell_dic)
+            {
+                cell.bctx.tick();
+            }
         }
 
 
         IEnumerable<Enemy> cells(BT_GraphAsset asset)
         {
-            for (int i = 0; i < 2; i++)
+            for (int i = 0; i < count; i++)
             {
                 Enemy cell = new()
                 {
