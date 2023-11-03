@@ -8,7 +8,10 @@ namespace Battle.Enemys.BT_GraphFlow
     {
         public Enum.EN_ret_state ret = Enum.EN_ret_state.none;
         public Stack<BT_Decide_Node> decide_nodes = new();
+
         public System.Action<BT_Context> start_ac;
+        public Dictionary<string, BT_CPN> cpns_dic;
+
         public string graph_name;
 
         Type IContext.context_type => typeof(BT_Context);
@@ -17,8 +20,8 @@ namespace Battle.Enemys.BT_GraphFlow
 
         public BT_Context(BT_GraphAsset asset)
         {
-            start_ac = asset.graph.start_ac;
             graph_name = asset.name;
+            asset.attach(this, asset.graph);
         }
 
 

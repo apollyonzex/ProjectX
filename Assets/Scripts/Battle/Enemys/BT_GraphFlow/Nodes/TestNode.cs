@@ -9,7 +9,7 @@ namespace Battle.Enemys.BT_GraphFlow.Nodes
     {
         [ShowInBody(format = "bl -> {0}")]
         [ExpressionType(CalcExpr.ValueType.Boolean)]
-        public Expression bl;
+        public BT_Expression bl;
 
         //==================================================================================================
 
@@ -20,7 +20,7 @@ namespace Battle.Enemys.BT_GraphFlow.Nodes
         {
             Debug.Log(comment);
 
-            bl.calc(ctx, typeof(BT_Context), out bool _bl);
+            var _bl = bl.do_calc_bool(ctx);
             if (_bl)
                 ctx.ret = Enum.EN_ret_state.success;
             else

@@ -41,5 +41,22 @@ namespace Battle.Enemys.BT_GraphFlow
             return (System.Action<BT_Context>)mi?.Invoke(this, null);
         }
     }
+
+
+    /// <summary>
+    /// 数据节点
+    /// </summary>
+    [System.Serializable]
+    public class BT_DSNode : BT_Node
+    {
+        [ShowInBody(format = "[{0}]")]
+        public string module_name;
+
+        public BT_CPN cpn;
+
+        public virtual void init()
+        { 
+        }
+    }
 }
 
