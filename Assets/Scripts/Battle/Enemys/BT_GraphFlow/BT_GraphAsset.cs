@@ -7,6 +7,7 @@ namespace Battle.Enemys.BT_GraphFlow
     [CreateAssetMenu(fileName = "bt_graph", menuName = "DIY_Graph/BT_Graph")]
     public class BT_GraphAsset : GraphAsset<BT_Graph>
     {
+        public string graph_name;
 
         //==================================================================================================
 
@@ -30,7 +31,9 @@ namespace Battle.Enemys.BT_GraphFlow
             Mission.instance.try_get_mgr(Config.EnemyMgr_Name, out EnemyMgr mgr);
             foreach (var (_,cell) in mgr.cell_dic)
             {
-                cell.bctx.start_ac = (graph as BT_Graph).start_ac;
+                var bctx = cell.bctx;
+                if (bctx.graph_name == graph_name)
+                    bctx.start_ac = (graph as BT_Graph).start_ac;
             }
 
             return bl;

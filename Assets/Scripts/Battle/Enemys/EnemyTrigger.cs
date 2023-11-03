@@ -1,6 +1,5 @@
 ﻿using Battle.Enemys.BT_GraphFlow;
 using Common;
-using System.Collections;
 using System.Collections.Generic;
 
 namespace Battle.Enemys
