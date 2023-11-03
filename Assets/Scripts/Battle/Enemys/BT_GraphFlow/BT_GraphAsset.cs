@@ -1,4 +1,5 @@
-﻿using GraphNode;
+﻿using Common;
+using GraphNode;
 using UnityEngine;
 
 namespace Battle.Enemys.BT_GraphFlow
@@ -6,6 +7,9 @@ namespace Battle.Enemys.BT_GraphFlow
     [CreateAssetMenu(fileName = "bt_graph", menuName = "DIY_Graph/BT_Graph")]
     public class BT_GraphAsset : GraphAsset<BT_Graph>
     {
+
+        //==================================================================================================
+
         public override Graph new_graph()
         {
             return init_graph(new BT_Graph());
@@ -16,6 +20,20 @@ namespace Battle.Enemys.BT_GraphFlow
         {
             graph.nodes = new Node[] { };
             return graph;
+        }
+
+
+        public override bool save_graph(Graph graph)
+        {
+            var bl = base.save_graph(graph);
+
+            Mission.instance.try_get_mgr(Config.EnemyMgr_Name, out EnemyMgr mgr);
+            foreach (var (_,cell) in mgr.cell_dic)
+            {
+                cell.bctx.start_ac = (graph as BT_Graph).start_ac;
+            }
+
+            return bl;
         }
     }
 }

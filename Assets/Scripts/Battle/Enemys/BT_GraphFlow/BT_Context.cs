@@ -1,6 +1,8 @@
-﻿using GraphNode;
+﻿using Common;
+using GraphNode;
 using System;
 using System.Collections.Generic;
+using UnityEngine;
 
 namespace Battle.Enemys.BT_GraphFlow
 {
@@ -8,16 +10,15 @@ namespace Battle.Enemys.BT_GraphFlow
     {
         public Enum.EN_ret_state ret = Enum.EN_ret_state.none;
         public Stack<BT_Decide_Node> decide_nodes = new();
+        public System.Action<BT_Context> start_ac;
 
         Type IContext.context_type => typeof(BT_Context);
-
-        System.Action<BT_Context> m_start;
 
         //================================================================================================
 
         public BT_Context(BT_GraphAsset asset)
         {
-            m_start = asset.graph.start_ac;
+            start_ac = asset.graph.start_ac;
         }
 
 
@@ -35,7 +36,7 @@ namespace Battle.Enemys.BT_GraphFlow
 
         public void tick()
         {
-            m_start?.Invoke(this);
+            start_ac?.Invoke(this);
         }
     }
 }
