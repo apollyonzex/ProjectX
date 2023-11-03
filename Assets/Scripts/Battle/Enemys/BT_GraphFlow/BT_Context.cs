@@ -1,8 +1,6 @@
-﻿using Common;
-using GraphNode;
+﻿using GraphNode;
 using System;
 using System.Collections.Generic;
-using UnityEngine;
 
 namespace Battle.Enemys.BT_GraphFlow
 {
@@ -20,7 +18,7 @@ namespace Battle.Enemys.BT_GraphFlow
         public BT_Context(BT_GraphAsset asset)
         {
             start_ac = asset.graph.start_ac;
-            graph_name = asset.graph_name;
+            graph_name = asset.name;
         }
 
 
