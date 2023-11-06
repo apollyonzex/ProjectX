@@ -4,7 +4,6 @@ using System;
 
 namespace Battle.Enemys.BT_GraphFlow.CPNs
 {
-    [Serializable]
     public class BT_Float : BT_CPN
     {
         [ExprConst("value")]

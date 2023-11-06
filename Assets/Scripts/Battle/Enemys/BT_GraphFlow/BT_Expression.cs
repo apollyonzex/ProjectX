@@ -167,6 +167,9 @@ namespace Battle.Enemys.BT_GraphFlow
             {
                 var length = ees.Length;
                 (object obj, Type type)[] values = new (object obj, Type type)[length];
+                
+                Type ty = null;
+
                 for (int i = 0; i < length; i++)
                 {
                     var item = ees[i];
@@ -174,7 +177,7 @@ namespace Battle.Enemys.BT_GraphFlow
                     {
                         var t = ctx.GetType().GetProperty(expr.name).GetValue(ctx);
                         var ret_type = expr.ret_type;
-                        Type ty = null;
+                        
                         if (ret_type == CalcExpr.ValueType.Integer)
                             ty = typeof(int);
                         if (ret_type == CalcExpr.ValueType.Floating)
@@ -187,24 +190,12 @@ namespace Battle.Enemys.BT_GraphFlow
                     }
 
                     var ee = item as BT_EE;
+                    ty = ee.ret_type;
 
-                    if (ee.try_get_value(ctx, out float v1))
-                    {
-                        values[i] = (v1, typeof(float));
-                        continue;
-                    }
-
-                    if (ee.try_get_value(ctx, out int v2))
-                    {
-                        values[i] = (v2, typeof(int));
-                        continue;
-                    }
-
-                    if (ee.try_get_value(ctx, out bool v3))
-                    {
-                        values[i] = (v3, typeof(bool));
-                        continue;
-                    }
+                    var mi = ee.GetType().GetMethod("try_get_value").MakeGenericMethod(ty);
+                    var prms = new object[] { ctx, null };
+                    mi.Invoke(ee, prms);
+                    values[i] = (prms[1], ty);
                 }
 
                 //加载公式
