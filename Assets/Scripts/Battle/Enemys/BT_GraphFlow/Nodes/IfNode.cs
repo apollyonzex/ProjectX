@@ -21,9 +21,26 @@ namespace Battle.Enemys.BT_GraphFlow.Nodes
             var _bl = bl.do_calc_bool(ctx);
 
             if (_bl)
-                _o_true?.Invoke(ctx);
+            {
+                if (_o_true == null)
+                {
+                    ctx.ret = Enum.EN_ret_state.fail;
+                    return;
+                }
+
+                _o_true.Invoke(ctx);
+            }
+
             else
-                _o_false?.Invoke(ctx);
+            {
+                if (_o_false == null)
+                {
+                    ctx.ret = Enum.EN_ret_state.fail;
+                    return;
+                }
+
+                _o_false.Invoke(ctx);
+            }  
         }
         #endregion
 
