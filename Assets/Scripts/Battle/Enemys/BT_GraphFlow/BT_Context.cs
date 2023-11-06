@@ -26,6 +26,9 @@ namespace Battle.Enemys.BT_GraphFlow
         }
 
 
+        /// <summary>
+        /// 附加GraphAsset
+        /// </summary>
         public void attach(BT_GraphAsset asset)
         {
             if (graph_name == asset.name && asset.graph is BT_Graph _graph)
@@ -51,6 +54,18 @@ namespace Battle.Enemys.BT_GraphFlow
         }
 
 
+        /// <summary>
+        /// 刷新CPN数据
+        /// </summary>
+        public void refresh_cpns()
+        {
+            foreach (var (_, cpn) in cpns_dic)
+            {
+                cpn.refresh_data(this);
+            }
+        }
+
+
         public bool try_do_back()
         {
             if (decide_nodes.TryPeek(out var decide_node))
@@ -65,6 +80,8 @@ namespace Battle.Enemys.BT_GraphFlow
 
         public void tick()
         {
+            refresh_cpns();
+
             start_ac?.Invoke(this);
         }
     }
