@@ -32,20 +32,10 @@ namespace Battle.Enemys.BT_GraphFlow
 
             foreach (var (_,cell) in mgr.cell_dic)
             {
-                attach(cell.bctx, graph);
+                cell.bctx.attach(this);
             }
 
             return bl;
-        }
-
-
-        public void attach(BT_Context bctx, Graph graph)
-        {
-            if (bctx.graph_name == name && graph is BT_Graph _graph)
-            {
-                bctx.start_ac = _graph.start_ac;
-                bctx.cpns_dic = _graph.cpns_dic;
-            }
         }
     }
 }

@@ -1,7 +1,5 @@
 ﻿using GraphNode;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+using System;
 
 namespace Battle.Enemys.BT_GraphFlow
 {
@@ -52,10 +50,14 @@ namespace Battle.Enemys.BT_GraphFlow
         [ShowInBody(format = "[{0}]")]
         public string module_name;
 
-        public BT_CPN cpn;
+        public virtual Type cpn_type { get; } = null;
 
-        public virtual void init()
-        { 
+        //================================================================================================
+
+        public virtual T init_cpn<T>()
+        {
+            var cpn = (T)Activator.CreateInstance(cpn_type);        
+            return cpn;
         }
     }
 }

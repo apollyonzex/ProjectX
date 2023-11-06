@@ -9,7 +9,7 @@ namespace Battle.Enemys.BT_GraphFlow.Nodes
     {
         [ShowInBody(format = "bl -> {0}")]
         [ExpressionType(CalcExpr.ValueType.Boolean)]
-        public Expression bl;
+        public BT_Expression bl;
 
         //==================================================================================================
 
@@ -18,7 +18,7 @@ namespace Battle.Enemys.BT_GraphFlow.Nodes
         [Display("in")]
         public void _i(BT_Context ctx)
         {
-            bl.calc(ctx, typeof(BT_Context), out bool _bl);
+            var _bl = bl.do_calc_bool(ctx);
 
             if (_bl)
                 _o_true?.Invoke(ctx);

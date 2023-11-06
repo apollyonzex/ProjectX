@@ -4,26 +4,24 @@ using System;
 
 namespace Battle.Enemys.BT_GraphFlow.CPNs
 {
-    [Serializable]
-    public class BT_Float : BT_CPN
+    public class BT_Bool : BT_CPN
     {
         [ExprConst("value")]
-        public float value => m_value;
+        public bool value => node.value.do_calc_bool(ctx);
 
-        float m_value;
+        //bool m_value = false;
 
-        BT_FloatNode node;
+        BT_BoolNode node;
 
         //================================================================================================
 
         public override void init(BT_Context ctx, BT_DSNode dn)
         {
-            if (dn is BT_FloatNode node)
+            if (dn is BT_BoolNode node)
                 this.node = node;
 
             this.ctx = ctx;
         }
-
     }
 }
 

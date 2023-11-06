@@ -7,6 +7,7 @@ namespace Battle.Enemys.BT_GraphFlow
     {
         public static Dictionary<string, System.Type> infos_dic = new()
         {
+            { "_bool", typeof(BT_Bool) },
             { "_float", typeof(BT_Float) }
         };
     }
